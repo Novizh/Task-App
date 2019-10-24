@@ -21,7 +21,6 @@ class AddTask extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Add new Task</label>
-                    <input type="text" onChange={this.handleChange} value={this.state.title} />
                 </form>
             </div>
         )
