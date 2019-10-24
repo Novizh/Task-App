@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Tasks = ({tasks}) => {
+const Tasks = ({tasks, deleteTask}) => {
     const taskList = tasks.length ? (
         tasks.map(task => {
-            <div className="collection-item" key={task.id}>
-                <span>{task.title}</span>
-            </div>
+            return (
+                <div className="collection-item" key={task.id}>
+                    <span onClick={() => {deleteTask(task.id)}}>{task.title}</span>
+                </div>
+            )
         })
     ) : (
         <p className="center">Yay, you have no tasks!</p>

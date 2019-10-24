@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Tasks from './Tasks'
 
 class App extends Component {
   state = {
@@ -8,11 +9,19 @@ class App extends Component {
        {id: 3, title: "Learn React Router"},
      ]
   }
+  deleteTask = (id) => {
+    const tasks = this.state.tasks.filter(task => {
+      return task.id !== id
+    });
+    this.setState({
+      tasks
+    })
+  }
   render() {
     return (
-      <div className="App">
+      <div className="Task-App container">
         <h1 className="center blue-text">Tasks</h1>
-        <Tasks tasks={this.state.tasks} />
+        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask}/>
       </div>
     );
   }
