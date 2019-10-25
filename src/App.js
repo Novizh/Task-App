@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Tasks from './Tasks'
-import AddTask from './add_task'
+import AddTask from './AddTask'
 
 class App extends Component {
   state = {
